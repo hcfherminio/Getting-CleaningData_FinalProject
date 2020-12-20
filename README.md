@@ -1,2 +1,2 @@
-# Getting-CleaningData_FinalProject
-Final project 
+# GettingData_projectFinal
+Final project of Getting and Cleaning data course
