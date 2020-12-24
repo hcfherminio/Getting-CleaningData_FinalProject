@@ -13,7 +13,7 @@ train_subject<-read.table("train/subject_train.txt", sep="",header=FALSE)#subjec
 
 #binding subjects to the dataset
 train<-cbind(train,train_subject)
-test<-cbind(test,test_subject)
+test<-cbind(test,test_subject) 
 
 #binding both datasets rows
 dataset<-rbind(train,test)
