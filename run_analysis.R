@@ -30,7 +30,7 @@ for(i in c(1:6)){
       labels$Activities<-gsub(i,activity[i],labels$Activities)}
 
 #getting the dataset required by the assigment (only means and standard deviations)
-#finding columns with means
+#finding columns with means 
 dataset<-dataset[,sort(c(grep("*mean*",colnames(dataset)),
                          grep("*std*",colnames(dataset)),
                          grep("Subject_ID",colnames(dataset))))]
