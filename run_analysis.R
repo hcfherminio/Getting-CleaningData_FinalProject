@@ -22,18 +22,18 @@ labels<-rbind(trainl,testl)
 
 #getting column names properly
 cols<-read.table("features.txt",header=FALSE)[,-1]
-colnames(dataset)<-c(cols,"Subject")
-colnames(labels)<-"Labels"
+colnames(dataset)<-c(cols,"Subject_ID")
+colnames(labels)<-"Activities"
 
 #getting labels names instead of numbers
 for(i in c(1:6)){
-      labels$Labels<-gsub(i,activity[i],labels$Labels)}
+      labels$Activities<-gsub(i,activity[i],labels$Activities)}
 
 #getting the dataset required by the assigment (only means and standard deviations)
 #finding columns with means
 dataset<-dataset[,sort(c(grep("*mean*",colnames(dataset)),
                          grep("*std*",colnames(dataset)),
-                         grep("Subject",colnames(dataset))))]
+                         grep("Subject_ID",colnames(dataset))))]
 
 #binding dataset with activity labels
 dataset<-cbind(dataset,labels)
@@ -41,7 +41,7 @@ dataset<-cbind(dataset,labels)
 #getting a second data frame with the average as asked in the assigment
 #using dplyr
 mean_dataset<-dataset %>%
-             group_by(Subject,Labels) %>%
+             group_by(Subject_ID,Activities) %>%
              summarise_all(list(~mean(.,na.rm=TRUE)))
 
 #writing the output file as asked
