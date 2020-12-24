@@ -3,7 +3,7 @@ Final project of Getting and Cleaning data course
 
 All explanations are also written as comments in the main R (run_analysis.R) file. Please read all comments in that file to understand what I did.
 
-codebook
+codebook 
 train: train data set from train/X_train.txt file 
 test: test data set from test/X_test.txt file
 trainl: column labels for the train dataset obtained from train/y_train.txt file
